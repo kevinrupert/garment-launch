@@ -118,6 +118,16 @@ body {
       border: 1px solid $rose;
     }
   }
+  &.icon {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    &.selected {
+      background-color: $rose;
+    }
+  }
 }
 
 input {
@@ -228,15 +238,6 @@ header {
     @include justify-content(space-between);
     @include align-items(center);
   }
-  .email-order {
-    position: absolute;
-    top: 7px;
-    right: 7px;
-    min-width: 120px;
-    @include breakpoint(medium-screen-up) {
-      min-width: 150px;
-    }
-  }
   .logo {
     width: 100px;
     padding-top: 4px;
@@ -260,6 +261,112 @@ header {
         padding: 16px;
         font-weight: 400;
         font-size: 20px;
+      }
+    }
+  }
+  &.closet {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    background-color: rgba($white, .9);
+    .order {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      min-width: 120px;
+      @include breakpoint(medium-screen-up) {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+.order-menu {
+  background: $blue;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  @include breakpoint(large-screen-up) {
+    width: 400px;
+    right: 0;
+  }
+  .header {
+    height: 74px;
+    position: fixed;
+    z-index: 300;
+    width: 100%;
+    background: rgba($blue, .95);
+    padding: 24px;
+    box-sizing: border-box;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    color: $white;
+    @include breakpoint(large-screen-up) {
+      width: 400px;
+    }
+    .title-2 {
+      @include breakpoint(medium-screen-up) {
+        font-size: 28px;
+      }
+    }
+    .button.icon {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      &:hover {
+        background-color: $blue;
+      }
+    }
+  }
+  .send-order {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .button {
+      max-width: none;
+      background-color: $rose;
+    }
+  }
+  .menu {
+    padding: 0 24px 24px 24px;
+    margin-top: 74px;
+    color: $white;
+    .items {
+      border-top: 1px solid $white;
+      padding-top: 24px;
+      .item {
+        height: 74px;
+        margin-bottom: 24px;
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(space-between);
+        .details {
+          @include display(flex);
+          @include align-items(center);
+          .item-img {
+            height: 74px;
+            img {
+              height: 100%;
+            }
+          }
+          .item-info {
+            padding-left: 24px;
+            .item-name {
+              font-family: $calluna;
+              font-weight: 800;
+            }
+          }
+        }
+        .remove {
+          a {
+            color: $rose;
+            text-align: right;
+          }
+        }
       }
     }
   }
@@ -310,6 +417,7 @@ header {
       text-align: center;
     }
   }
+  margin-top: 74px;
 }
 
 .video {
@@ -425,7 +533,7 @@ header {
   }
 }
 
-.closet {
+.wardrobe {
   background-color: $light-gray;
   padding-top: 0;
   .items {
@@ -448,6 +556,12 @@ header {
           padding-top: 0;
         }
       }
+      .container {
+        width: 100%;
+        &.selected {
+          outline: 1px solid $rose;
+        }
+      }
       .item-img {
         border-bottom: 1px solid $light-gray;
         line-height: 0;
@@ -457,8 +571,9 @@ header {
       }
       .item-info {
         padding: 24px;
-        text-align: center;
+        // text-align: center;
         background-color: $white;
+        position: relative;
         .item-name {
           font-family: $calluna;
           font-weight: 800;

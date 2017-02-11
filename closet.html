@@ -10,22 +10,50 @@
   </head>
   <body>
 
-    <header>
+    <header class="closet">
       <div class="logo"><a href="/"><img src="assets/imgs/logo.svg"></a></div>
-      <div class="email-order">
-        <a class="button outline" href="#">Email Order</a>
+      <div class="order">
+        <a class="button outline" href="#">Items: 1</a>
       </div>
     </header>
+
+    <div class="order-menu">
+        <div class="header">
+          <h1 class="title-2">Your Items</h1>
+          <div class="button icon"><img src="assets/imgs/close.svg"></div>
+        </div>
+        <div class="menu">
+          <div class="items">
+            <div class="item">
+              <div class="details">
+                <div class="item-img">
+                  <img src="assets/imgs/closet/item-2.jpg" />
+                </div>
+                <div class="item-info">
+                  <p class="item-name">Denim Dress</p>
+                  <p class="item-number mar-top-8">#4387</p>
+                </div>
+              </div>
+              <div class="remove">
+                <a href="#">Remove</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="send-order">
+          <a class="button" href="#">Send Order</a>
+        </div>
+    </div>
 
     <div class="intro-2 gray pad">
       <div class="container">
         <h1 class="title-1">Hi, Jenna.</h1>
         <p class="mar-top-24 mar-bot-24"><img src="assets/imgs/red-rule.svg" />
-        <p class="large">Welcome to your new wardrobe. <br>Email us what items you like, and we'll send them your way.</p>
+        <p class="large">Welcome to your new wardrobe. <br>Select the items you like, and we'll send them your way.</p>
       </div>
     </div>
 
-    <div class="closet pad">
+    <div class="wardrobe pad">
       <div class="items">
         <div class="item">
           <div class="item-img">
@@ -34,15 +62,19 @@
           <div class="item-info">
             <p class="item-name">Black Chinos</p>
             <p class="item-number mar-top-16">#4117</p>
+            <div class="button icon"><img src="assets/imgs/add.svg" /></div>
           </div>
         </div>
         <div class="item">
-          <div class="item-img">
-            <img src="assets/imgs/closet/item-2.jpg" />
-          </div>
-          <div class="item-info">
-            <p class="item-name">Denim Dress</p>
-            <p class="item-number mar-top-16">#4387</p>
+          <div class="container selected">
+            <div class="item-img">
+              <img src="assets/imgs/closet/item-2.jpg" />
+            </div>
+            <div class="item-info">
+              <p class="item-name">Denim Dress</p>
+              <p class="item-number mar-top-16">#4387</p>
+              <div class="button icon selected"><img src="assets/imgs/selected.svg" /></div>
+            </div>
           </div>
         </div>
         <div class="item">
@@ -52,6 +84,7 @@
           <div class="item-info">
             <p class="item-name">Gray Bra</p>
             <p class="item-number mar-top-16">#3427</p>
+            <div class="button icon"><img src="assets/imgs/add.svg" /></div>
           </div>
         </div>
         <div class="item">
@@ -61,6 +94,7 @@
           <div class="item-info">
             <p class="item-name">Striped Dress</p>
             <p class="item-number mar-top-16">#4662</p>
+            <div class="button icon"><img src="assets/imgs/add.svg" /></div>
           </div>
         </div>
         <div class="item">
@@ -70,15 +104,16 @@
           <div class="item-info">
             <p class="item-name">Blue Cotton Dress</p>
             <p class="item-number mar-top-16">#4387</p>
+            <div class="button icon"><img src="assets/imgs/add.svg" /></div>
           </div>
         </div>
       </div>
-      <div class="order flex-center mar-top-48">
+<!--       <div class="order flex-center mar-top-48">
         <div class="container">
           <p class="large">Email us what items you like, and we'll send them your way.</p>
           <a class="button mar-top-24" href="#">Email Order</a>
         </div>
-      </div>
+      </div> -->
     </div>
 
 
