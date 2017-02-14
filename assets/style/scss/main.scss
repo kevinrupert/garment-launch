@@ -128,6 +128,9 @@ body {
       background-color: $rose;
     }
   }
+  &.disabled {
+    opacity: 0.4;
+  }
 }
 
 input {
@@ -280,6 +283,11 @@ header {
       }
     }
   }
+  &.password {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+  }
 }
 
 .order-menu {
@@ -311,6 +319,7 @@ header {
     .title-2 {
       @include breakpoint(medium-screen-up) {
         font-size: 28px;
+        margin-bottom: 2px;
       }
     }
     .button.icon {
@@ -393,15 +402,13 @@ header {
   }
 }
 
-.intro-2 {
+.intro {
   @include display(flex);
   @include flex-direction(column);
   @include align-items(center);
+  background-color: $light-gray;
   @include breakpoint(large-screen-up) {
     padding: 64px 100px;
-  }
-  &.gray {
-    background-color: $light-gray;
   }
   .large {
     color: $blue;
@@ -600,6 +607,70 @@ header {
   }
 }
 
+.form {
+  background: $light-gray;
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+  @include breakpoint(large-screen-up) {
+    height: calc(100vh - 74px);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    background-image: $overlay, url('../../../assets/imgs/hero-2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .error {
+    width: 100%;
+    padding: 24px;
+    background: $rose;
+    color: $white;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include breakpoint(large-screen-up) {
+      position: absolute;
+      top: 0;
+      text-align: center;
+      @include justify-content(center);
+      height: 86px;
+      .close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+      }
+    }
+  }
+  .container {
+    background: $white;
+    // height: 500px;
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include breakpoint(large-screen-up) {
+      width: 500px;
+      padding: 48px;
+    }
+    input {
+      width: 100%;
+    }
+    .title-2 {
+      color: $blue;
+    }
+    .username, .password {
+      width: 100%;
+    }
+    .button {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
 footer {
   text-align: center;
   color: $blue;
@@ -712,6 +783,8 @@ footer {
     }
   }
 }
+
+
 
 
 
