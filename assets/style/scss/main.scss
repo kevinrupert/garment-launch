@@ -80,6 +80,17 @@ body {
     line-height: 30px;
     max-width: 700px;
   }
+  &.quote {
+    font-weight: 800;
+    @include breakpoint(medium-screen-up) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @include breakpoint(large-screen-up) {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
 }
 
 .regular {
@@ -495,6 +506,13 @@ header {
   background-position: center;
   background-size: cover;
   height: 200px;
+  padding: 24px;
+  box-sizing: border-box;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  text-align: center;
+  color: $white;
   @include breakpoint(medium-screen-up) {
     height: 460px;
   }
@@ -506,7 +524,7 @@ header {
     background-image: url('../../../assets/imgs/about-1.jpg');
   }
   &.about-3 {
-    background-image: url('../../../assets/imgs/about-3.jpg');
+    background-image: $overlay-dark, url('../../../assets/imgs/about-3.jpg');
   }
 }
 
