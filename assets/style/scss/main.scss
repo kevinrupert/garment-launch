@@ -60,6 +60,7 @@ body {
   font-size: 28px;
   line-height: 32px;
   font-weight: 200;
+  color: $blue;
   @include breakpoint(medium-screen-up) {
     font-size: 34px;
   }
@@ -162,6 +163,13 @@ a {
   }
 }
 
+p.img {
+  max-width: 650px;
+  img {
+    width: 100%;
+  }
+}
+
 /// Spacing
 
 .pad {
@@ -198,6 +206,11 @@ a {
 
 .mar-top-24 {
   margin-top: 24px;
+  &.scale {
+    @include breakpoint(large-screen-up) {
+      margin-top: 48px;
+    }
+  }
 }
 
 .mar-top-48 {
@@ -424,7 +437,18 @@ header {
       text-align: center;
     }
   }
-  margin-top: 74px;
+  &.fixed-header {
+    margin-top: 74px;
+  }
+  &.tall {
+    @include breakpoint(large-screen-up) {
+      box-sizing: border-box;
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      height: 350px;
+    }
+  }
 }
 
 .video {
@@ -456,6 +480,33 @@ header {
   }
   &.hero {
     background-image: $overlay, url('../../../assets/imgs/hero.jpg');
+  }
+}
+
+.text {
+  .container {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+  }
+}
+
+.big-img {
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  @include breakpoint(medium-screen-up) {
+    height: 460px;
+  }
+  @include breakpoint(large-screen-up) {
+    height: 500px;
+    // margin: -76px 100px 0 100px;
+  }
+  &.about-1 {
+    background-image: url('../../../assets/imgs/about-1.jpg');
+  }
+  &.about-3 {
+    background-image: url('../../../assets/imgs/about-3.jpg');
   }
 }
 
